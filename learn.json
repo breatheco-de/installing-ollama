@@ -1,0 +1,24 @@
+{
+    "slug": "install-ollama-openwebui-locally",
+    "title": {
+        "en": "A Complete Guide to Installing Ollama and OpenWebUI Locally",
+        "es": "Una Guía Completa para Instalar Ollama y OpenWebUI Localmente"
+    },
+    "preview": "https://example.com/preview-image.jpg",
+    "technologies": [
+        "Ollama",
+        "OpenWebUI",
+        "Docker",
+        "Generative AI"
+    ],
+    "difficulty": "intermediate",
+    "duration": 2,
+    "projectType": "tutorial",
+    "description": {
+        "en": "A complete guide to installing Ollama and OpenWebUI locally on your device.",
+        "es": "Una guía completa para instalar Ollama y OpenWebUI localmente en tu dispositivo."
+    },
+    "delivery": {
+        "formats": ["no_delivery"]
+    }
+}
