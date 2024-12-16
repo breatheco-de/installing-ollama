@@ -13,7 +13,7 @@
     ],
     "difficulty": "intermediate",
     "duration": 2,
-    "projectType": "tutorial",
+    "projectType": "project",
     "description": {
         "en": "A complete guide to installing Ollama and OpenWebUI locally on your device.",
         "es": "Una guía completa para instalar Ollama y OpenWebUI localmente en tu dispositivo."
