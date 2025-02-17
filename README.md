@@ -1,7 +1,7 @@
 ---
 title: "A Complete Guide to Installing Ollama and OpenWebUI Locally"
 date: 2024-11-26
-description: "A complete guide to installing Ollama and OpenWebUI locally on your device."
+description: "A step-by-step guide to installing Ollama and OpenWebUI locally on your device. Learn how to set up and run large language models like Llama 3.2, ensuring privacy, flexibility, and offline access. Follow simple instructions to install Docker, configure Ollama, and interact with models through OpenWebUI's powerful interface."
 tags: ["generative-ai", "llm", "ollama", "openwebui"]
 
 ---
