@@ -1,7 +1,7 @@
 ---
 title: "Guía Completa para Instalar Ollama y OpenWebUI Localmente"
 date: 2024-11-26
-description: "Guía completa para instalar Ollama y OpenWebUI localmente en tu dispositivo."
+description: "Una guía completa para instalar Ollama y OpenWebUI localmente en tu dispositivo. Aprende a configurar estos poderosos herramientas de IA paso a paso, garantizando privacidad, flexibilidad y control total sobre tus modelos de lenguaje. Sigue esta guía detallada para ejecutar modelos de IA sin depender de la nube."
 tags: ["ia-generativa", "llm", "ollama", "openwebui"]
 
 ---
