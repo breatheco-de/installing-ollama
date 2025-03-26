@@ -3,7 +3,6 @@ title: "Guía Completa para Instalar Ollama y OpenWebUI Localmente"
 date: 2024-11-26
 description: "Una guía completa para instalar Ollama y OpenWebUI localmente en tu dispositivo. Aprende a configurar estos poderosos herramientas de IA paso a paso, garantizando privacidad, flexibilidad y control total sobre tus modelos de lenguaje. Sigue esta guía detallada para ejecutar modelos de IA sin depender de la nube."
 tags: ["ia-generativa", "llm", "ollama", "openwebui"]
-
 ---
 
 # Guía Completa para Instalar Ollama y OpenWebUI Localmente
@@ -81,28 +80,30 @@ Docker Desktop requiere **Windows Subsystem for Linux (WSL)**. Sigue estos pasos
 
 - [ ] **Instalar WSL**:
 
-   - Abre PowerShell como Administrador y ejecuta:
-     ```
-     wsl --install
-     ```
-   - Reinicia tu computadora si se te solicita.
-   - Confirma la instalación ejecutando:
-     ```
-     wsl --list --online
-     ```
+  - Abre PowerShell como Administrador y ejecuta:
+    ```
+    wsl --install
+    ```
+  - Reinicia tu computadora si se te solicita.
+  - Confirma la instalación ejecutando:
+    ```
+    wsl --list --online
+    ```
+
+   [Solucionar errores al instalar WSL en Windows](https://4geeks.com/ask?query=Tuve-un-error-al-instalar-WSL-en-Windows)
 
 - [ ] **Instalar Docker Desktop**:
 
-   - Descarga Docker Desktop desde la [página oficial](https://www.docker.com/products/docker-desktop) e instálalo.
-   - Durante la instalación, asegúrate de seleccionar la opción **"Enable WSL 2 integration"**.
-   - Una vez instalado, inicia Docker Desktop y verifica que esté funcionando.
+  - Descarga Docker Desktop desde la [página oficial](https://www.docker.com/products/docker-desktop) e instálalo.
+  - Durante la instalación, asegúrate de seleccionar la opción **"Enable WSL 2 integration"**.
+  - Una vez instalado, inicia Docker Desktop y verifica que esté funcionando.
 
 - [ ] **Probar Docker**:
-   - Abre un terminal (Command Prompt, PowerShell o tu distribución de WSL) y ejecuta:
-     ```
-     docker --version
-     ```
-   - Deberías ver la información de la versión de Docker.
+  - Abre un terminal (Command Prompt, PowerShell o tu distribución de WSL) y ejecuta:
+    ```
+    docker --version
+    ```
+  - Deberías ver la información de la versión de Docker.
 
 ### **Para Usuarios de macOS y Linux**
 
@@ -123,14 +124,14 @@ Ollama sirve como backend para ejecutar modelos. Sigue estos pasos:
 
 - [ ] Abre tu terminal y usa Homebrew para instalar Ollama:
 
-   ```
-   brew install ollama
-   ```
+  ```
+  brew install ollama
+  ```
 
 - [ ] Verifica la instalación:
-   ```
-   ollama --version
-   ```
+  ```
+  ollama --version
+  ```
 
 ### **Para Usuarios de Windows**
 
@@ -138,17 +139,17 @@ Ollama sirve como backend para ejecutar modelos. Sigue estos pasos:
 - [ ] Ejecuta el instalador y sigue las instrucciones.
 - [ ] Configura la siguiente variable de entorno para que Ollama escuche en todas las interfaces:
 
-   - Busca **"Variables de entorno"** en el menú de inicio.
-   - Agrega una nueva **Variable de Usuario**:
-     - **Nombre de la Variable:** `OLLAMA_HOST`
-     - **Valor de la Variable:** `0.0.0.0:8080`
-   - Guarda los cambios y reinicia tu computadora.
+  - Busca **"Variables de entorno"** en el menú de inicio.
+  - Agrega una nueva **Variable de Usuario**:
+    - **Nombre de la Variable:** `OLLAMA_HOST`
+    - **Valor de la Variable:** `0.0.0.0:8080`
+  - Guarda los cambios y reinicia tu computadora.
 
 - [ ] Verifica la instalación:
-   - Abre un terminal y ejecuta:
-     ```
-     ollama --version
-     ```
+  - Abre un terminal y ejecuta:
+    ```
+    ollama --version
+    ```
 
 ---
 
@@ -158,41 +159,41 @@ Llama 3.2 es uno de los modelos de lenguaje más avanzados, con mejoras signific
 
 - [ ] Abre un terminal y asegúrate de que Ollama esté funcionando:
 
-   ```
-   ollama serve
-   ```
+  ```
+  ollama serve
+  ```
 
 - [ ] Descarga el modelo Llama 3.2: 1B ejecutando:
 
-   ```
-   ollama pull llama3.2:1b
-   ```
+  ```
+  ollama pull llama3.2:1b
+  ```
 
-   - Este comando descargará la versión ligera del modelo Llama 3.2 (1B parámetros) en tu sistema local.
-   - Dependiendo de la velocidad de tu conexión a internet, este proceso puede tardar unos minutos.
+  - Este comando descargará la versión ligera del modelo Llama 3.2 (1B parámetros) en tu sistema local.
+  - Dependiendo de la velocidad de tu conexión a internet, este proceso puede tardar unos minutos.
 
 - [ ] Verifica que el modelo se haya instalado correctamente:
 
-   ```
-   ollama list
-   ```
+  ```
+  ollama list
+  ```
 
-   - Deberías ver `llama3.2:1b` en la lista de modelos disponibles.
+  - Deberías ver `llama3.2:1b` en la lista de modelos disponibles.
 
 - [ ] Prueba el modelo ejecutándolo directamente en el terminal:
 
-   ```
-   ollama run llama3.2:1b
-   ```
+  ```
+  ollama run llama3.2:1b
+  ```
 
-   - Ejemplo de prompt:
-     ```
-     >>> ¿Cuál es la capital de Francia?
-     ```
-   - Respuesta esperada:
-     ```
-     La capital de Francia es París.
-     ```
+  - Ejemplo de prompt:
+    ```
+    >>> ¿Cuál es la capital de Francia?
+    ```
+  - Respuesta esperada:
+    ```
+    La capital de Francia es París.
+    ```
 
 ---
 
@@ -202,24 +203,24 @@ OpenWebUI proporciona la interfaz gráfica para interactuar con los modelos. Uti
 
 - [ ] Abre un terminal y ejecuta el siguiente comando para iniciar OpenWebUI:
 
-   ```
-   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
-   -v open-webui:/app/backend/data --name open-webui --restart always \
-   ghcr.io/open-webui/open-webui:main
-   ```
+  ```
+  docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
+  -v open-webui:/app/backend/data --name open-webui --restart always \
+  ghcr.io/open-webui/open-webui:main
+  ```
 
 - [ ] Confirma que el contenedor de Docker esté funcionando:
 
-   ```
-   docker ps
-   ```
+  ```
+  docker ps
+  ```
 
-   Deberías ver `open-webui` en la lista.
+  Deberías ver `open-webui` en la lista.
 
 - [ ] Abre tu navegador e ingresa a:
-   ```
-   http://localhost:3000
-   ```
+  ```
+  http://localhost:3000
+  ```
 
 ---
 
@@ -227,26 +228,65 @@ OpenWebUI proporciona la interfaz gráfica para interactuar con los modelos. Uti
 
 - [ ] **Inicia sesión en OpenWebUI**:
 
-   - Crea una cuenta o usa las credenciales predeterminadas.
+  - Crea una cuenta o usa las credenciales predeterminadas.
 
 - [ ] **Conecta el Modelo Llama 3.2: 1B**:
 
-   - En el menú de **Configuración** de OpenWebUI, ve a **Modelos**.
-   - Selecciona `llama3.2:1b` y haz clic en **Conectar**.
+  - En el menú de **Configuración** de OpenWebUI, ve a **Modelos**.
+  - Selecciona `llama3.2:1b` y haz clic en **Conectar**.
 
 - [ ] **Prueba el Modelo**:
 
-   - Escribe un mensaje en la interfaz principal y comienza a interactuar con él.
+  - Escribe un mensaje en la interfaz principal y comienza a interactuar con él.
 
-   Ejemplo de prompt:
+  Ejemplo de prompt:
 
-   ```
-   Escribe una historia corta sobre un gato que se convierte en detective.
-   ```
+  ```
+  Escribe una historia corta sobre un gato que se convierte en detective.
+  ```
 
 4. **Experimenta con Otras Funciones**:
    - Usa Markdown o LaTeX para formatear texto y ecuaciones matemáticas.
    - Ajusta los parámetros del modelo para personalizar las respuestas.
+
+---
+
+## **¿Qué compartir sobre este proyecto para hacerlo viral? 🚀**
+
+Ahora que tu configuración de IA local está funcionando, es momento de **mostrar tu trabajo y hacerlo viral**. Aquí tienes algunas ideas:
+
+### **1. Comparte un video demo (Corto y atractivo) 🎥**
+
+- Graba un video de **30-60 segundos** interactuando con la IA.
+- Muestra una respuesta interesante de Llama 3.2—puede ser un poema, un fragmento de código o un chiste.
+- Publícalo en **Twitter, TikTok, YouTube Shorts e Instagram Reels**.
+
+### **2. Destaca los beneficios de la IA local 🏆**
+
+- **Privacidad:** "¡Sin nube, sin rastreo! Mi IA funciona localmente 🔥"
+- **Velocidad:** "Sin llamadas a la API = respuestas instantáneas ⚡"
+- **Ahorro de costos:** "¿Por qué pagar por ChatGPT cuando puedes ejecutar IA GRATIS?"
+
+### **3. Publica en comunidades tecnológicas 💬**
+
+- Comparte tu experiencia en **Reddit (r/MachineLearning, r/selfhosted, r/LocalLLaMA)**.
+- Escribe un post en **Hacker News** o **dev.to**.
+- Únete a grupos de **Discord o Telegram sobre IA** y comparte capturas de pantalla.
+
+### **4. Escribe un blog o un hilo en Twitter 📝**
+
+- **Explícalo paso a paso**: "¡Cómo instalé mi propio chatbot de IA local en 10 minutos!"
+- Usa hashtags como **#IA, #SelfHosted, #OpenSource, #Llama3, #GPTAlternative**.
+
+### **5. Reta a otros a intentarlo 🏆**
+
+- Publica: **"¿Puedes configurar tu propia IA más rápido que yo? ¡Pruébalo y comparte tu experiencia!"**
+- Crea un reto o **pide a la gente que comparta sus mejores respuestas generadas por la IA**.
+
+### **6. ¡Haz memes! 😂**
+
+- "Yo: Pagando por IA. Mi billetera: 😭"
+- "Cuando te das cuenta de que puedes ejecutar IA gratis en casa 💡"
 
 ---
 
